@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  html {
+    @apply scroll-smooth overflow-x-hidden overscroll-contain m-0 p-0 font-montserrat text-white
+  }
+
+  *, *::before, *::after {
+    @apply m-0 p-0 box-border no-underline
+  }
+
+  body {
+    @apply m-0 p-0 bg-customBlack
+  }
+
+  img {
+    @apply w-full h-full object-cover object-center cursor-pointer
+  }
+
+  [type='text'],
+  [type='email'],
+  textarea {
+    @apply bg-transparent w-full border-slate-300 rounded-lg shadow-sm 
+      focus:outline-none focus:border-pink-400 focus:ring-0 mb-3 
+      caret-pink-500 text-lg text-slate-400 border 
+      border-solid outline-none ring-0 h-auto resize-none
+  }
+
+  textarea {
+    @apply h-40
+  }
+}
+
+
+@layer utilities {
+  .transitionAfter {
+    @apply after:transition-all after:duration-300 after:ease-linear after:delay-100
+  }
+
+  .transition {
+    @apply transition-all duration-300 ease-linear delay-100
+  }
+
+  .h2 {
+    @apply text-customGreen text-7xl text-center col-span-4 mb-10 font-bangers;
+  }
+
+  .skeleton {
+    opacity: .7;
+    animation: skeleton-loading 1s linear infinite alternate;
+    -webkit-animation: skeleton-loading 1s linear infinite alternate;
+  }
+  
+  @keyframes skeleton-loading {
+    0% {
+      background-color: hsl(200, 20%, 70%)
+    }
+  
+    100% {
+      background-color: hsl(200, 20%, 95%)
+    }
+  }
+}
